@@ -1,5 +1,6 @@
+import json
 class setting:
-  def __init__(self, settingName, defaltData=None)
+  def __init__(self, settingName, defaltData=None):
     try:
       with open("assets/settings.json", "r") as file:
         try:
