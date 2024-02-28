@@ -10,7 +10,7 @@ class setting:
 
         try: 
           if tf[settingName]:
-            settings = tf
+            pass
         except:
           tf[settingName] = defaltData
 
@@ -19,7 +19,7 @@ class setting:
 
     except:
       with open("Assets/settings.json", "x") as file:
-        json.dump(settings, file, indent= 2)
+        json.dump(tf, file, indent= 2)
 
     with open("Assets/appData.json", "r") as read_file:
       data = json.load(read_file)
