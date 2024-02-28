@@ -16,23 +16,23 @@ class log:
   
   def __init__(self, level, clear=True):
     try:
-      with open('assets/app.log', 'r') as appLog:
+      with open('Assets/app.log', 'r') as appLog:
         if clear and len(appLog.readlines()) >= 500:  
-          open('assets/app.log', 'w').close()
-          with open('assets/app.log', 'a') as file:
+          open('Assets/app.log', 'w').close()
+          with open('Assets/app.log', 'a') as file:
             
             file.write(f'\n\n{timess()}\n\n\n **** START **** \n\n\n\n')
             file.close()
         else:
-          with open('assets/app.log', 'a') as file:
+          with open('Assets/app.log', 'a') as file:
             file.write(f'\n\n{timess()}\n\n **** START **** \n\n\n\n')
             file.close()
     except:
-      with open('assets/app.log', 'x+') as appLog:
+      with open('Assets/app.log', 'x+') as appLog:
         if len(appLog.readlines()) >= 500:
-          open('assets/app.log', 'w').close()
+          open('Assets/app.log', 'w').close()
 
-        with open('assets/app.log', 'a') as file:
+        with open('Assets/app.log', 'a') as file:
           file.write('\n\n\n\n **** START **** \n\n\n\n')
           file.close()
       # setup a log formatter
@@ -47,7 +47,7 @@ class log:
     self.logger.getLogger('').addHandler(console_handler)
 
     # setup a FileHandler for app.log file logging
-    file_handler = self.logger.FileHandler('assets/app.log')
+    file_handler = self.logger.FileHandler('Assets/app.log')
     file_handler.setLevel(level)
     file_handler.setFormatter(formatter)
 
