@@ -22,6 +22,6 @@ class setting:
       with open("Assets/settings.json", "x") as file:
         json.dump(tf, file, indent= 2)
 
-    with open("Assets/appData.json", "r") as read_file:
+    with open("Assets/settings.json", "r") as read_file:
       data = json.load(read_file)
       return data[settingName]
