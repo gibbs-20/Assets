@@ -1,29 +1,8 @@
 import os
 import json
 
-settings = {
-  'doClear': True
-}
-
-
-try:
-  with open("assets/appData.json", "r+") as file:
-    try:
-      tf = json.load(file)
-    except:
-      tf = {}
-    try: 
-      if tf['doClear']:
-        settings = tf
-    except:
-      tf['doClear'] = True
-      json.dump(tf, file)
-except:
-  with open("assets/appData.json", "x") as file:
-    json.dump(settings, file, indent= 2)
-
-with open("assets/appData.json", "r") as read_file:
-  data = json.load(read_file)
+from Assets.voidapex11.setting import *
+settings['doClear'] = setting('doClear', defaltData=True)
 
 def togle_DoClear():
   settings1 = {'doClear': not data['doClear']}
