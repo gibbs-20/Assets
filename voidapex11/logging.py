@@ -1,5 +1,7 @@
 import logging as logger
+from Assets.voidapex11.setting import *
 import time
+
 
 def timess():
   return time.asctime
@@ -100,4 +102,9 @@ class log:
     return
 
 
-logging = log(logger.DEBUG)
+logging = log(logger.INFO)
+logSetting = setting('loggingLvl', defaltData='INFO')
+try:
+  exec(f'logging = log(logger.{logSetting})')
+except:
+  pass
