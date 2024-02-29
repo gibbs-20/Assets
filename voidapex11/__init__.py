@@ -1,4 +1,4 @@
-print('''
+def aboutMe():print('''
 I am voidapex11
 
 I am a programer who created the idear of this assets folder and some of its tools.

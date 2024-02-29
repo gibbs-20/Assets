@@ -106,7 +106,7 @@ class log:
 
 
 logging = log(logger.INFO)
-logSetting = setting('loggingLvl', defaltData='INFO')
+logSetting = setting.get('loggingLvl', defaltData='INFO')
 try:
   exec(f'logging = log(logger.{logSetting})')
 except:

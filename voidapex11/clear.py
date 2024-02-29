@@ -2,7 +2,7 @@ import os
 import json
 
 from Assets.voidapex11.setting import *
-settings['doClear'] = setting('doClear', defaltData=True)
+settings['doClear'] = setting.get('doClear', defaltData=True)
 
 def togle_DoClear():
   settings1 = {'doClear': not data['doClear']}

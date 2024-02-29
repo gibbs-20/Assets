@@ -1,8 +1,8 @@
 
 from numpy import mod
 #from assets.voidapex11.AboutMe import *
-from assets.voidapex11.clear import *
-from assets.voidapex11.logging import *
+from Assets.voidapex11.clear import *
+from Assets.voidapex11.logging import *
 import math
 import statistics
 from cmath import *
