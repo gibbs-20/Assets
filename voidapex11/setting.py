@@ -1,6 +1,6 @@
 import json
 class setting:
-  def __init__(self, settingName, defaltData=None):
+  def get(self, settingName, defaltData=None):
     tf = {settingName: defaltData}
     try:
       with open("Assets/settings.json", "r") as file:
