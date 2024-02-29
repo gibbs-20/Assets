@@ -1,4 +1,6 @@
+
 from numpy import mod
+#from assets.voidapex11.AboutMe import *
 from assets.voidapex11.clear import *
 from assets.voidapex11.logging import *
 import math
@@ -26,6 +28,7 @@ class Calc:
 
   import re
   import numpy as np
+  
 
   operators = ['+', '-', '*', '/', '**', '%', '//']
 
@@ -34,9 +37,12 @@ class Calc:
       '5', '6', '7', '8', '9', '-', '#'
   ]  # Include the minus sign for negative numbers
   d = 0
+  
 
   def replace_functions(self, data: list):
-    
+    '''
+    this trys to run each inputed item as a math., cmath., self.np., and statistics. function 
+    '''
     nd = []
     mtypes = ['math.', 'cmath.', 'self.np.', 'statistics.']
     breaky = False
@@ -60,7 +66,11 @@ class Calc:
     logging.debug(f'in replaced functions after filtering is\n {nd}')
     return nd
 
+
   def intro(self):
+    '''
+    intro prints a guide to how to use the calculatar
+    '''
     print('''    Welcome to the calculatarla
 
   we use all of the python operators and have float compatability
@@ -84,25 +94,47 @@ class Calc:
   press enter to hide this message
   ''')
 
+
   def terminate(self):
-    self.os.system('clear')
+    '''
+    this calls the clear function then ends the program
+    '''
+    clear()
     self.sys.exit()
 
+
   def isInt(self, intAble: str):
+    '''
+    It trys to convert a input into a int
+    if this fails it returns false
+    otherwise it returns True
+    '''
     try:
       int(intAble)
       return True
     except ValueError:
       return False
 
+
   def isFloat(self, floatAble: str):
+    '''
+    It trys to convert a input into a float
+    if this fails it returns false
+    otherwise it returns True
+    '''
     try:
       float(floatAble)
       return True
     except:
       return False
 
+
   def isStr(self, strAble: str):
+    '''
+    It trys to convert a input into a string
+    if this fails it returns false
+    otherwise it returns True
+    '''
     try:
       str(strAble)
       return True
@@ -111,6 +143,9 @@ class Calc:
     
   
   def listify(self, data: str):
+    '''
+    this trys to convert the input into a valid list for mathIt
+    '''
     logging.debug('data inputed into listify is ' + data)
     lst = []
     temp = ''
@@ -130,6 +165,11 @@ class Calc:
 
   
   def mathIt(self, data):
+    '''
+    MathIt filters out invalid inputs so that all that remains is a valid str
+    so it converts \"2 + badData 2\" to \"2+2\"
+    this makes the calculatar safe and reliable
+    '''
     data = self.listify(data)
     logging.debug(f'data returned from sistify is {data}')
     data = self.replace_functions(data)
@@ -191,7 +231,11 @@ class Calc:
     else:
       exec(f'print({final})')
 
+
   def start(self):
+    '''
+    Starts the Calculatar
+    '''
     last = 0
     self.intro()
     input()
@@ -238,3 +282,4 @@ class Calc:
 
 
 calc = Calc()
+#Calc.start()

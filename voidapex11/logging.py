@@ -15,6 +15,9 @@ class log:
   import time
   
   def __init__(self, level, clear=True):
+    '''
+    logging is a program made by voidapex11 that logs mesages not just to console but also to a file
+    '''
     try:
       with open('Assets/app.log', 'r') as appLog:
         if clear and len(appLog.readlines()) >= 500:  
